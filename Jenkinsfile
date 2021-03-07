@@ -13,6 +13,9 @@ pipeline {
    triggers {
        pollSCM('* * * * *')
    }
+   tools {
+           nodejs 'node-15'
+       }
    parameters {
            string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
            text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
@@ -26,9 +29,12 @@ pipeline {
          SURL = "local.example.com"
        }
        steps {
-           sh 'echo ${SURL}'
-           sh 'person name= ${PERSON}'
+         sh 'node --version'
        }
+       //steps {
+       //    sh 'echo ${SURL}'
+       //    sh 'person name= ${PERSON}'
+       //}
      }
      stage('Hello1') {
          steps {
