@@ -35,11 +35,18 @@ pipeline {
        //    sh 'echo ${SURL}'
        //    sh 'person name= ${PERSON}'
        //}
+
      }
      stage('Hello1') {
-         steps {
+        input {
+           message "Should we continue?"
+           ok "Yes, we should."
+           submitter "alice,bob"
+        }
+                                                    }
+        steps {
             echo 'hello world1'
-         }
+        }
      }
 
    }
