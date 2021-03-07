@@ -43,7 +43,7 @@ pipeline {
            ok "Yes, we should."
            submitter "admin"
         }
-                                                    }
+
         steps {
             echo 'hello world1'
         }
