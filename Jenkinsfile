@@ -18,6 +18,7 @@ pipeline {
        }
        steps {
            sh 'echo ${SURL}'
+           sh 'person name= ${PERSON}'
        }
      }
      stage('Hello1') {
