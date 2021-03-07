@@ -1,17 +1,23 @@
 pipeline {
-  agent any
-  stages {
-    stage('Hello') {
-     steps {
-       sh 'echo Hello world'
-       mail bcc: '', body: 'Test', cc: '', from: '', replyTo: '', subject: 'Test', to: 'srikanthchelukala@gmail.com'
-     }
+   agent any
+
+   environment {
+      SURL = "globale.example.com"
    }
-     stage('Hello1') {
-        steps {
-          sh 'echo Hello world12'
-          emailext body: 'Test', subject: 'Test', to: 'srikanthchelukala@gmail.com'
-        }
+   stages {
+     stage('Hello') {
+       environment {
+         SURL = "local.example.com"
+       }
+       steps {
+           sh 'echo $(SURL)'
+       }
      }
- }
+     stage('Hello1') {
+         steps {
+            echo 'hello world1'
+         }
+     }
+
+   }
 }
