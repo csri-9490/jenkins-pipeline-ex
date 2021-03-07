@@ -48,6 +48,20 @@ pipeline {
             echo 'hello world1'
         }
      }
+     stage('Parallel Stages') {
+       parallel {
+         stage('P1') {
+           steps {
+             sh 'sleep 100'
+           }
+         }
+         stage('P2') {
+           steps {
+             sh 'sleep 110'
+           }
+         }
+       }
+     }
 
    }
 }
