@@ -6,11 +6,19 @@
 pipeline {
     agent any
 
+    environment {
+        URL_TEST = "google.com"
+    }
+
+    parameters {
+        string(name: 'MESSAGE', defaultValue: '', description: 'Message to print')
+    }
+
     stages {
-        stage('one') {
+        stage('One') {
             steps {
                 script {
-                    log.info 'Starting'
+                    log.info "${MESSAGE}"
                 }
             }
         }
