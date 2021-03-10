@@ -1,26 +1,27 @@
 @Library('roboshop') _
+log(URL_TEST="google.com")
 
 //log.info 'Starting'
 //log.warning 'Nothing to do!'
 
-pipeline {
-    agent any
+//pipeline {
+//    agent any
 
-    environment {
-        URL_TEST = "google.com"
-    }
+//    environment {
+//        URL_TEST = "google.com"
+//    }
 
-    parameters {
-        string(name: 'MESSAGE', defaultValue: '', description: 'Message to print')
-    }
+//    parameters {
+//        string(name: 'MESSAGE', defaultValue: '', description: 'Message to print')
+//    }
 
-    stages {
-        stage('One') {
-            steps {
-                script {
-                    log.info "${params.MESSAGE}"
-                }
-            }
-        }
-    }
-}
+//    stages {
+//        stage('One') {
+//            steps {
+//                script {
+//                    log.info "Message = ${MESSAGE}, URL = ${URL_TEST}"
+//                }
+//            }
+//        }
+//    }
+//}
