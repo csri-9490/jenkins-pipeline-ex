@@ -18,7 +18,7 @@ pipeline {
         stage('One') {
             steps {
                 script {
-                    log.info "${MESSAGE}"
+                    log.info "${params.MESSAGE}"
                 }
             }
         }
